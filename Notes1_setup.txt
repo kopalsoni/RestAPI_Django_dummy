@@ -1,0 +1,53 @@
+Python - backend to run web server
+Django - backend to run web server
+Javascript - frontend
+React - frontend
+Third party APIs
+
+
+Install in VS Code- 
+nodejs
+Python
+Django
+React
+Javascript
+
+Pip Install - 
+Django
+Django rest
+
+
+pip install django djangorestframework
+
+Folders:
+
+
+In terminal:
+django-admin startproject <name of the project>
+
+cd <name of the project>
+django-admin startapp <app name/ api>
+        .init.py - to make the folder a python package
+        models.py - this is wehre our database models are gonna gonna
+        tests.py - if you're gonna put tests
+        views.py - code for rendering our use or API endpoints
+
+Now we need to add 
+1. our app created above to the project
+2. 'rest_framework'
+    go to project folder > settings.py > Installations = [] > add '<app name created above>.apps.ApiConfig'
+                                                            add 'rest_framework'
+    Note: ApiConfig is actually a class that was created in apps.py file under <app name> folder
+
+create urls.py under app folder - to store the urls local to the app. They're essentially the endpoints
+
+
+Whenever make a change in model or database, run below command to push
+Terminal:
+    python .\manage.py makemigrations
+    python .\manage.py migrate
+
+Run the web server:
+    python .\manage.py runserver
+
+serializers.py = translate our class in models to json response to setup an API view for backend

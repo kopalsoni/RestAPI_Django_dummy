@@ -1,0 +1,70 @@
+Create a view and run that on django server
+
+include the app.urls path to urls.py of project folder
+
+
+Setup React and front end to our project:
+    django-admin startapp frontend
+frontend will have anythong related to frontend
+
+Create folder:
+    static -  contain anything that the browser wil chache or anything static
+        frontend - main javascript bundle
+        css
+        images
+    templates
+
+In parent frontend folder,
+     npm init -y
+
+install webpack to bundle al javascripts file:
+    npm i webpack webpack-cli --save-dev
+
+install babel to make our code browser friendly
+    npm i @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev
+for async and await
+    npm install @babel/plugin-proposal-class-properties
+
+install react
+    npm i react react-dom --save-dev
+reroute the pages
+    npm install react-router-dom
+
+install materials - to style webpage
+    npm install @material-ui/core
+    npm install @material-ui/icons
+
+inside of parent frontend folder
+    setup babel.config.json
+    setup webpack.config.js
+    inside src crate index.js
+
+
+Django will render a page/templae that react will take contorl of.
+
+setup index.html in child frontend folder inside templates
+setup views.py in parent frontend folder
+    to redicert requests to index.html for frontend
+
+create urls.py for frontend, which will redirect by default to views.py> index method that we craeted above
+
+Create App.js in frontend
+    render coponent for ui
+
+above chunk (Component created above) needs to be rendered in index.html, 
+so that whatever we have in App.js will be in div of index.html
+Access the app container in App.js -> const appDiv = document.getElementByID("app")
+render()
+
+entry file, index.js is importing '.components/App' which is App.js, rendering the code inside in index.html
+
+Path : music_controller/frontend > npm run dev
+    creates main.js inside child frontend folder which is simply the bundled javascript
+
+go to settings.py and add frontend to installed apps
+
+React router is used so that the components are viewed on different urls and not the default one
+
+The routes added in react (App.js or home.js), they need to be added in Django urls.py as well
+
+Added some js files to created and view rooms, imported in App.js

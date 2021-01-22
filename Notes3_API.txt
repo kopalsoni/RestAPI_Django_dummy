@@ -1,0 +1,5 @@
+Now we will import some libraris in views to create APIs
+
+serializer_class takes the data, serialize it and gives it in a python representation,
+    then we'll be able to validate if the data sent was essentially valid
+    If it is valdi, we can create the room
